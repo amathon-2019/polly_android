@@ -235,21 +235,21 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/pink_circle_shape" />
+                android:background="@drawable/blue_circle_shape" />
 
             <Button
                 android:id="@+id/green_button"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/pink_circle_shape" />
+                android:background="@drawable/green_circle_shape" />
 
             <Button
                 android:id="@+id/yellow_button"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginLeft="20dp"
-                android:background="@drawable/pink_circle_shape" />
+                android:background="@drawable/yellow_circle_shape" />
 
             <Button
                 android:id="@+id/add_button"
