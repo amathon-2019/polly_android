@@ -31,15 +31,76 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        todoDataList = ArrayList()
-
-        todoDataList.add(
+        todoDataList = arrayListOf(
             TodoListItem(
                 "라이언 무지 어파치", "돌리고"
-            )
-        )
-
-        todoDataList.add(
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
+            TodoListItem(
+                "일정 2", "돌리고"
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고"
+            ),
             TodoListItem(
                 "일정 2", "돌리고"
             )
@@ -59,8 +120,6 @@ class MainActivity : AppCompatActivity() {
 
         fb_create.onClick {
             Log.v("hi", "hello")
-            todoDataList.clear()
-            tickerAdapter.notifyDataSetChanged()
         }
     }
 
