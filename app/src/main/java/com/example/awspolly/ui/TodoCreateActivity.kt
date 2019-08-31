@@ -1,7 +1,9 @@
 package com.example.awspolly.ui
 
 import android.app.AlarmManager
+import android.app.DatePickerDialog
 import android.app.PendingIntent
+import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -35,11 +37,18 @@ class TodoCreateActivity : AppCompatActivity() {
         lateinit var dbHandler: DBHandler
     }
 
+    var selectedHour:Int = 0
+    var selectedMinute:Int = 0
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todo_create)
+
+        val currentDate = Calendar.getInstance()
+        selectedHour = currentDate.get(Calendar.HOUR_OF_DAY)
+        selectedMinute = currentDate.get(Calendar.MINUTE)
 
 
         alarm_manager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
@@ -50,15 +59,12 @@ class TodoCreateActivity : AppCompatActivity() {
 
         confirm_button.setOnClickListener {
             // calendar에 시간 셋팅
-            calendar.set(Calendar.HOUR_OF_DAY, tp_timepicker.hour)
-            calendar.set(Calendar.MINUTE, tp_timepicker.minute)
+            calendar.set(Calendar.HOUR_OF_DAY, selectedHour)
+            calendar.set(Calendar.MINUTE, selectedMinute)
 
-            // 시간 가져옴
-            val hour = tp_timepicker.hour
-            val minute = tp_timepicker.minute
             Toast.makeText(
                 this,
-                "Alarm 예정 " + hour + "시 " + minute + "분",
+                "Alarm 예정 " + selectedHour + "시 " + selectedMinute + "분",
                 Toast.LENGTH_SHORT
             ).show()
 
@@ -75,6 +81,34 @@ class TodoCreateActivity : AppCompatActivity() {
                 AlarmManager.RTC_WAKEUP, calendar.timeInMillis,
                 pendingIntent
             )
+
+            finish()
+        }
+
+        date_pick_button.onClick {
+            val currentDate = Calendar.getInstance()
+            val year = currentDate.get(Calendar.YEAR)
+            val month = currentDate.get(Calendar.MONTH)
+            val day = currentDate.get(Calendar.DAY_OF_MONTH)
+
+            val hour = currentDate.get(Calendar.HOUR_OF_DAY)
+            val minute = currentDate.get(Calendar.MINUTE)
+
+//            val datePicker = DatePickerDialog(this@TodoCreateActivity, DatePickerDialog.OnDateSetListener { datePicker, mYear, mMonth, mDay ->
+//
+//            }, year, month, day)
+
+
+            val timePicker = TimePickerDialog(this@TodoCreateActivity, TimePickerDialog.OnTimeSetListener { timePicker, mHour, mMinute ->
+                val dateStr = "%d년 %02d월 %02d일 %02d:%02d".format(year, month + 1, day, mHour, mMinute)
+                date_pick_button.text = dateStr
+
+                selectedHour = mHour
+                selectedMinute = mMinute
+            }, hour, minute, true)
+
+            timePicker.setTitle("날짜 선택")
+            timePicker.show()
         }
 
     }
