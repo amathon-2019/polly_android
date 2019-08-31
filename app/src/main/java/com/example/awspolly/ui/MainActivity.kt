@@ -38,6 +38,13 @@ class MainActivity : AppCompatActivity() {
                 "라이언 무지 어파치", "돌리고"
             )
         )
+
+        todoDataList.add(
+            TodoListItem(
+                "일정 2", "돌리고"
+            )
+        )
+
         tickerAdapter = ItemRecyclerViewAdapter(todoDataList)
 
         recyclerView_main.adapter = ItemRecyclerViewAdapter(todoDataList)
