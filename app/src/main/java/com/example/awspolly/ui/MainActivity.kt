@@ -1,6 +1,7 @@
 package com.example.awspolly.ui
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +13,7 @@ import com.example.awspolly.adapter.ItemRecyclerViewAdapter
 import com.example.awspolly.network.TodoApi
 import com.example.awspolly.network.TodoResponse
 import com.example.awspolly.network.TodoService
+import com.example.awspolly.service.AudioPlayerService
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
@@ -150,6 +152,15 @@ class MainActivity : AppCompatActivity() {
         fb_create.onClick {
             Log.v("hi", "hello")
         }
+
+        startAudioPlayerService()
+    }
+
+    private fun startAudioPlayerService() {
+        val service = Intent(this@MainActivity, AudioPlayerService::class.java)
+        service.putExtra("message", true)
+
+        startService(service)
     }
 
     private fun todoListReponse() {
