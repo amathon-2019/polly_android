@@ -43,6 +43,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.example.awspolly.R.layout.activity_main)
+        setSupportActionBar(toolbar)
+        getSupportActionBar()?.setDisplayShowTitleEnabled(false)
+
 
         val cal = Calendar.getInstance()
         val df: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
@@ -57,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         cal.add(Calendar.HOUR_OF_DAY, 1)
         cal.add(Calendar.MINUTE, 20)
         cal.add(Calendar.SECOND, 10)
-
 
 
 
