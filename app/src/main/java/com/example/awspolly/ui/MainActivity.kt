@@ -40,8 +40,7 @@ class MainActivity : AppCompatActivity() {
         )
         tickerAdapter = ItemRecyclerViewAdapter(todoDataList)
 
-        recyclerView_main.adapter =
-            ItemRecyclerViewAdapter(todoDataList)
+        recyclerView_main.adapter = ItemRecyclerViewAdapter(todoDataList)
         recyclerView_main.layoutManager =
             LinearLayoutManager(
                 this,
