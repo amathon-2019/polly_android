@@ -5,8 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class TodoService : Application(){
-    private val baseURL ="https://goldenticket.ga"
-    //internal var progressDialog: AppCompatDialog? = null
+    private val baseURL ="http://13.125.54.15:8080/v2/api-docs"
 
     lateinit var todoApi: TodoApi
 
