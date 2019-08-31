@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
@@ -24,7 +25,7 @@ import java.io.IOException;
 
 public class RingtonePlayingService  extends Service {
 
-    MediaPlayer mediaPlayer = new MediaPlayer();
+    MediaPlayer mediaPlayer;
     int startId;
     boolean isRunning;
 
@@ -77,15 +78,28 @@ public class RingtonePlayingService  extends Service {
 
         // 알람음 재생 X , 알람음 시작 클릭
         if(!this.isRunning && startId == 1) {
+            Log.v("hihihi333", "hihihi start");
 
+            mediaPlayer = new MediaPlayer();
            //mediaPlayer = MediaPlayer.create(this,R.raw.test);
             try {
+                mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                 mediaPlayer.setDataSource("http://amathon.2019.polly.s3.ap-northeast-2.amazonaws.com/20190831234421_polly_sound.mp3");
                 mediaPlayer.prepare();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mediaPlayer) {
+                    Log.v("hihihi333", "mp3 started");
+                    mediaPlayer.start();
+                }
+            });
+
             mediaPlayer.start();
+
 
             this.isRunning = true;
             this.startId = 0;

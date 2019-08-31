@@ -83,10 +83,10 @@ class TodoCreateActivity : AppCompatActivity() {
             )
 
             // 알람셋팅
-//            alarm_manager!!.set(
-//                AlarmManager.RTC_WAKEUP, calendar.timeInMillis,
-//                pendingIntent
-//            )
+            alarm_manager!!.set(
+                AlarmManager.RTC_WAKEUP, calendar.timeInMillis,
+                pendingIntent
+            )
         }
 
     }
