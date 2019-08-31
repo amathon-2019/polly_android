@@ -5,10 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class ItemRecyclerViewAdapter(val dataList: ArrayList<TodoListItem>) : RecyclerView.Adapter<TodoViewHolder>() {
-
-
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         TodoViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_main_item, parent, false))
 
