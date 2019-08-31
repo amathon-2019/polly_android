@@ -1,4 +1,4 @@
-package com.example.awspolly
+package com.example.awspolly.data
 
 data class TodoListItem(
     var content: String,
