@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AWSPolly</string>
+    <string name="today_todo">today todo</string>
+    <string name="_8_31">8월 31일</string>
+    <string name="title_activity_todo_create">TodoCreateActivity</string>
+    <string name="content">content</string>
+    <string name="time">time</string>
+    <string name="bt_update">입력하기</string>
+    <string name="et_input_todo">오늘의 할 일을 입력하세요</string>
+</resources>
