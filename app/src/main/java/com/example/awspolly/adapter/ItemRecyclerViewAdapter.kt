@@ -6,21 +6,31 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.awspolly.R
 import com.example.awspolly.data.TodoListItem
+import java.time.Month
 
 class ItemRecyclerViewAdapter(val dataList: ArrayList<TodoListItem>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private lateinit var context:Context
 
-    private val PHOTO_VIEW_TYPE = 1
-    private val TODO_VIEW_TYPE = 2
+    private val TODO_VIEW_TYPE = 0
+    private val MONTH_VIEW_TYPE = 1
+    private val WEEK_VIEW_TYPE = 2
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         context = parent.context
 
 
-        return if (viewType == PHOTO_VIEW_TYPE) {
-            PhotoViewHolder(
+        return if (viewType == MONTH_VIEW_TYPE) {
+            MonthViewHolder(
                 LayoutInflater.from(context).inflate(
-                    R.layout.photo_view_item,
+                    R.layout.month_view_item,
+                    parent,
+                    false
+                )
+            )
+        } else if (viewType == WEEK_VIEW_TYPE) {
+            WeekViewHolder(
+                LayoutInflater.from(context).inflate(
+                    R.layout.week_view_item,
                     parent,
                     false
                 )
@@ -40,21 +50,17 @@ class ItemRecyclerViewAdapter(val dataList: ArrayList<TodoListItem>) : RecyclerV
     override fun getItemCount(): Int = dataList.size
 
     override fun getItemViewType(position: Int): Int {
-        return if (position == 0) {
-            PHOTO_VIEW_TYPE
-        } else {
-            TODO_VIEW_TYPE
-        }
+        return dataList[position].viewType
     }
 
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val viewType = getItemViewType(position)
 
-        if (viewType == PHOTO_VIEW_TYPE) {
-            holder as PhotoViewHolder
-//            holder.bind()
-
+        if (viewType == MONTH_VIEW_TYPE) {
+            holder as MonthViewHolder
+        } else if (viewType == WEEK_VIEW_TYPE) {
+            holder as WeekViewHolder
         } else {
             holder as TodoViewHolder
             holder.bind(dataList[position])
