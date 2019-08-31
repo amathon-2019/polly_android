@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 false
             )
 
-        todoListReponse()
+//        todoListReponse()
 
         fb_create.onClick {
             Log.v("hi", "hello")
