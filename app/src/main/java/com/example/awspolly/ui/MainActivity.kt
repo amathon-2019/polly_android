@@ -91,70 +91,31 @@ class MainActivity : AppCompatActivity() {
                 "일정 2", "돌리고", 2
             ),
             TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0, "#4058bc"
+                "Amathon", "돌리고", 0
             ),
             TodoListItem(
-                "일정 2", "돌리고", 0
+                "12시 포트폴리오 스터디", "돌리고", 0
             ),
             TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0, "#61db69"
+                "여행", "돌리고", 0, "#4058bc"
             ),
             TodoListItem(
-                "일정 2", "돌리고", 0
+                "THIS. 집중 스터디", "돌리고", 0, "#61db69"
             ),
             TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0
+                "라이언 무지 어파치", "돌리고", 2
             ),
             TodoListItem(
-                "일정 2", "돌리고", 0
+                "ALLOSAURUS 회식", "돌리고", 0, "#61db69"
             ),
             TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0, "#61db69"
+                "라이언 무지 어파치", "돌리고", 2
             ),
             TodoListItem(
-                "일정 2", "돌리고", 0
+                "여행", "돌리고", 0, "#4058bc"
             ),
             TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0
-            ),
-            TodoListItem(
-                "일정 2", "돌리고", 0, "#4058bc"
-            ),
-            TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0
-            ),
-            TodoListItem(
-                "일정 2", "돌리고", 0
-            ),
-            TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0
-            ),
-            TodoListItem(
-                "일정 2", "돌리고", 0
-            ),
-            TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0, "#4058bc"
-            ),
-            TodoListItem(
-                "일정 2", "돌리고", 0
-            ),
-            TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0
-            ),
-            TodoListItem(
-                "일정 2", "돌리고", 0
-            ),
-            TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0
-            ),
-            TodoListItem(
-                "일정 2", "돌리고", 0
-            ),
-            TodoListItem(
-                "라이언 무지 어파치", "돌리고", 0
-            ),
-            TodoListItem(
-                "일정 2", "돌리고", 0
+                "라이언 무지 어파치", "돌리고", 2
             )
         )
 
