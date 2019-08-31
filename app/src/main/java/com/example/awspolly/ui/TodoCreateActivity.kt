@@ -4,11 +4,7 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.media.AudioManager
-import android.media.MediaPlayer
-import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TimePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -46,21 +42,13 @@ class TodoCreateActivity : AppCompatActivity() {
         setContentView(R.layout.activity_todo_create)
 
 
-
-
-        bt_update.onClick {
-            //createResponse()
-        }
-
         alarm_manager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         // 타임피커 설정
         alarm_timepicker = findViewById(R.id.tp_timepicker)
 
         val my_intent = Intent(this, Alarm_Receiver::class.java)
 
-        val alarm_on = findViewById<Button>(R.id.bt_update)
-
-        alarm_on.setOnClickListener {
+        confirm_button.setOnClickListener {
             // calendar에 시간 셋팅
             calendar.set(Calendar.HOUR_OF_DAY, tp_timepicker.hour)
             calendar.set(Calendar.MINUTE, tp_timepicker.minute)
