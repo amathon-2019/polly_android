@@ -58,15 +58,86 @@ class MainActivity : AppCompatActivity() {
 
         todoDataList = ArrayList()
 
-        todoDataList.add(
+
+
+        todoDataList = arrayListOf(
             TodoListItem(
-                "라이언 무지 어파치", date
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 1
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 0
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 0
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 0
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 1
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 0
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 0
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 0
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 0
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 0
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 0
+            ),
+            TodoListItem(
+                "라이언 무지 어파치", "돌리고", 0
+            ),
+            TodoListItem(
+                "일정 2", "돌리고", 0
             )
         )
+
         tickerAdapter = ItemRecyclerViewAdapter(todoDataList)
 
-        recyclerView_main.adapter =
-            ItemRecyclerViewAdapter(todoDataList)
+        recyclerView_main.adapter = ItemRecyclerViewAdapter(todoDataList)
         recyclerView_main.layoutManager =
             LinearLayoutManager(
                 this,
@@ -78,8 +149,6 @@ class MainActivity : AppCompatActivity() {
 
         fb_create.onClick {
             Log.v("hi", "hello")
-            todoDataList.clear()
-            tickerAdapter.notifyDataSetChanged()
         }
     }
 

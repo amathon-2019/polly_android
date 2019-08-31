@@ -1,18 +1,19 @@
 package com.example.awspolly.adapter
 
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.awspolly.R
 import com.example.awspolly.data.TodoListItem
+import kotlinx.android.synthetic.main.todo_view_item.view.*
 
 class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    var tvContent = itemView.findViewById(R.id.tv_todo) as TextView
-    var tvDate = itemView.findViewById(R.id.tv_date) as TextView
+    var todoText: TextView? = itemView.todo_text
+    var todoDate: ViewGroup? = itemView.todo_date
 
     fun bind(item: TodoListItem) {
-        tvContent.text = item.content
-        tvDate.text = item.todoDate
+        todoText?.text = item.content
+        todoDate?.visibility = if (item.isShowDate == 1) View.VISIBLE else View.INVISIBLE
     }
 }
