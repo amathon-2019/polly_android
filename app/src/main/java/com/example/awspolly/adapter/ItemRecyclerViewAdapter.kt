@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.awspolly.R
 import com.example.awspolly.data.TodoListItem
-import java.time.Month
 
 class ItemRecyclerViewAdapter(val dataList: ArrayList<TodoListItem>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private lateinit var context:Context

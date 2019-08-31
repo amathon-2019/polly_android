@@ -47,13 +47,18 @@ class TodoCreateActivity : AppCompatActivity() {
         setContentView(R.layout.activity_todo_create)
 
         val currentDate = Calendar.getInstance()
+
+        val year = currentDate.get(Calendar.YEAR)
+        val month = currentDate.get(Calendar.MONTH)
+        val day = currentDate.get(Calendar.DAY_OF_MONTH)
+
         selectedHour = currentDate.get(Calendar.HOUR_OF_DAY)
         selectedMinute = currentDate.get(Calendar.MINUTE)
 
+        val dateStr = "%d년 %02d월 %02d일 %02d:%02d".format(year, month + 1, day, selectedHour, selectedMinute)
+        date_pick_button.text = dateStr
 
         alarm_manager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        // 타임피커 설정
-        alarm_timepicker = findViewById(R.id.tp_timepicker)
 
         val my_intent = Intent(this, Alarm_Receiver::class.java)
 
