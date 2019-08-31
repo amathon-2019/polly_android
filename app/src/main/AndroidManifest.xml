@@ -5,7 +5,9 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -20,7 +22,10 @@
             android:name=".service.AudioPlayerService"
             android:enabled="true"
             android:exported="true"/>
-
+        <receiver android:name=".service.Alarm_Receiver" />
+        <service
+            android:name=".service.RingtonePlayingService"
+            android:enabled="true" />
         <activity
             android:name=".ui.TodoCreateActivity"
             android:label="@string/title_activity_todo_create"

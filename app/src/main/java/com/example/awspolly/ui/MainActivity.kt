@@ -1,13 +1,14 @@
 package com.example.awspolly.ui
 
 import android.annotation.SuppressLint
+import android.app.AlarmManager
+import android.app.PendingIntent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.awspolly.R
 import com.example.awspolly.data.TodoListItem
 import com.example.awspolly.adapter.ItemRecyclerViewAdapter
 import com.example.awspolly.network.TodoApi
@@ -17,6 +18,7 @@ import com.example.awspolly.service.AudioPlayerService
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.startActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,6 +26,7 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
+
 
 @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class MainActivity : AppCompatActivity() {
@@ -35,10 +38,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tickerAdapter: ItemRecyclerViewAdapter
     private lateinit var todoDataList: ArrayList<TodoListItem>
 
+
     @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(com.example.awspolly.R.layout.activity_main)
 
         val cal = Calendar.getInstance()
         val df: DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
@@ -53,6 +57,21 @@ class MainActivity : AppCompatActivity() {
         cal.add(Calendar.HOUR_OF_DAY, 1)
         cal.add(Calendar.MINUTE, 20)
         cal.add(Calendar.SECOND, 10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -151,10 +170,13 @@ class MainActivity : AppCompatActivity() {
 
         fb_create.onClick {
             Log.v("hi", "hello")
+            startActivity<TodoCreateActivity>()
         }
 
-        startAudioPlayerService()
+        //startAudioPlayerService()
     }
+
+
 
     private fun startAudioPlayerService() {
         val service = Intent(this@MainActivity, AudioPlayerService::class.java)

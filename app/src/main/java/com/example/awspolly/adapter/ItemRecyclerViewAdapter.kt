@@ -61,9 +61,6 @@ class ItemRecyclerViewAdapter(val dataList: ArrayList<TodoListItem>) : RecyclerV
         }
     }
 
-//    override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
-//        holder.bind(dataList[position])
-//    }
 
     fun setData(setDataList: List<TodoListItem>) {
         this.dataList.clear()
